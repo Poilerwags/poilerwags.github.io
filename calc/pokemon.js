@@ -37,7 +37,7 @@ var Pokemon = (function () {
         this.name = options.name || name;
         this.types = this.species.types;
         this.weightkg = this.species.weightkg;
-        this.level = options.level || 100;
+        this.level = options.level || 120;
         this.gender = options.gender || this.species.gender || 'M';
         this.ability = options.ability || ((_b = this.species.abilities) === null || _b === void 0 ? void 0 : _b[0]) || undefined;
         this.abilityOn = !!options.abilityOn;

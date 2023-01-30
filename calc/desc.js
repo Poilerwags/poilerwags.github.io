@@ -840,11 +840,11 @@ function buildDescription(description, attacker, defender) {
 function getDescriptionLevels(attacker, defender) {
     if (attacker.level !== defender.level) {
         return [
-            attacker.level === 100 ? '' : "Lvl ".concat(attacker.level),
-            defender.level === 100 ? '' : "Lvl ".concat(defender.level),
+            attacker.level === 120 ? '' : "Lvl ".concat(attacker.level),
+            defender.level === 120 ? '' : "Lvl ".concat(defender.level),
         ];
     }
-    var elide = [100, 50, 5].includes(attacker.level);
+    var elide = [120, 50, 5].includes(attacker.level);
     var level = elide ? '' : "Lvl ".concat(attacker.level);
     return [level, level];
 }

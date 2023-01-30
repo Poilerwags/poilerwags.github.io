@@ -67,7 +67,7 @@ function legacyStatToStat(st) {
 
 // input field validation
 var bounds = {
-	"level": [0, 100],
+	"level": [0, 120],
 	"base": [1, 255],
 	"evs": [0, 252],
 	"ivs": [0, 31],
@@ -582,7 +582,7 @@ $(".set-selector").change(function () {
 			}
 		} else {
 			pokeObj.find(".teraType").val(pokemon.types[0]);
-			pokeObj.find(".level").val(100);
+			pokeObj.find(".level").val(120);
 			pokeObj.find(".hp .evs").val(0);
 			pokeObj.find(".hp .ivs").val(31);
 			pokeObj.find(".hp .dvs").val(15);
