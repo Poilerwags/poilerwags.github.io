@@ -172,6 +172,9 @@ th {
     position: relative;
     top: -5px;
 }
+.main-title-text {
+    top: -10px;
+}
 .big-text {
     text-align: left;
     font-weight: bold;
@@ -308,7 +311,7 @@ th {
     background: #ffff99;
 }
 
-.genSelection, .notationSelection {
+.genSelection, .notationSelection, .modeSelection {
     display: inline-block;
     position: relative;
     top: -8px;
@@ -418,6 +421,13 @@ table.field {
 .select2-container .select2-choice > .select2-chosen {
     width: 100%;
 }
+
+.select2-chosen {
+	word-wrap: break-word;
+	text-overflow: inherit;
+	white-space: normal !important;
+}
+
 .small-select.select2-container .select2-choice {
     font-size: 0.9em;
     height: 18px;

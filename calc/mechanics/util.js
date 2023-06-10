@@ -150,7 +150,7 @@ function getFinalSpeed(gen, pokemon, field, side) {
     else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
         speedMods.push(2048);
     }
-    else if (getMostProficientStat(pokemon, gen) === 'spe' &&
+    else if (getQPBoostedStat(pokemon, gen) === 'spe' &&
         ((pokemon.hasAbility('Protosynthesis') &&
             (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
             (pokemon.hasAbility('Quark Drive') &&
@@ -430,8 +430,10 @@ function getBaseDamage(level, basePower, attack, defense) {
     return Math.floor(OF32(Math.floor(OF32(OF32(Math.floor((2 * level) / 5 + 2) * basePower) * attack) / defense) / 50 + 2));
 }
 exports.getBaseDamage = getBaseDamage;
-function getMostProficientStat(pokemon, gen) {
+function getQPBoostedStat(pokemon, gen) {
     var e_4, _a;
+    if (pokemon.boostedStat)
+        return pokemon.boostedStat;
     var bestStat = 'atk';
     try {
         for (var _b = __values(['def', 'spa', 'spd', 'spe']), _c = _b.next(); !_c.done; _c = _b.next()) {
@@ -451,7 +453,7 @@ function getMostProficientStat(pokemon, gen) {
     }
     return bestStat;
 }
-exports.getMostProficientStat = getMostProficientStat;
+exports.getQPBoostedStat = getQPBoostedStat;
 function getFinalDamage(baseAmount, i, effectiveness, isBurned, stabMod, finalMod, protect) {
     var damageAmount = Math.floor(OF32(baseAmount * (85 + i)) / 100);
     if (stabMod !== 4096)

@@ -777,7 +777,7 @@ describe('calc', function () {
         });
         describe('Gen 9', function () {
             (0, helper_1.inGen)(9, function (_a) {
-                var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+                var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
                 test('Supreme Overlord', function () {
                     var kingambit = Pokemon('Kingambit', { level: 100, ability: 'Supreme Overlord', alliesFainted: 0 });
                     var aggron = Pokemon('Aggron', { level: 100 });
@@ -814,6 +814,34 @@ describe('calc', function () {
                     defender.teraType = 'Normal';
                     expect(calc(cc)).toEqual(se);
                 });
+                function testQP(ability, field) {
+                    test("".concat(ability, " should take into account boosted stats by default"), function () {
+                        var attacker = Pokemon('Iron Leaves', { ability: ability, boosts: { spa: 6 } });
+                        var defender = Pokemon('Iron Treads', { ability: ability, boosts: { spd: 6 } });
+                        var result = calculate(attacker, defender, Move('Leaf Storm'), Field(field)).rawDesc;
+                        expect(result.attackerAbility).toBe(ability);
+                        expect(result.defenderAbility).toBe(ability);
+                        result = calculate(attacker, defender, Move('Psyblade'), Field(field)).rawDesc;
+                        expect(result.attackerAbility).toBeUndefined();
+                        expect(result.defenderAbility).toBeUndefined();
+                    });
+                }
+                function testQPOverride(ability, field) {
+                    test("".concat(ability, " should be able to be overridden with boostedStat"), function () {
+                        var attacker = Pokemon('Flutter Mane', { ability: ability, boostedStat: 'atk', boosts: { spa: 6 } });
+                        var defender = Pokemon('Walking Wake', { ability: ability, boostedStat: 'def', boosts: { spd: 6 } });
+                        var result = calculate(attacker, defender, Move('Leaf Storm'), Field(field)).rawDesc;
+                        expect(result.attackerAbility).toBeUndefined();
+                        expect(result.defenderAbility).toBeUndefined();
+                        result = calculate(attacker, defender, Move('Psyblade'), Field(field)).rawDesc;
+                        expect(result.attackerAbility).toBe(ability);
+                        expect(result.defenderAbility).toBe(ability);
+                    });
+                }
+                testQP('Quark Drive', { terrain: 'Electric' });
+                testQP('Protosynthesis', { weather: 'Sun' });
+                testQPOverride('Quark Drive', { terrain: 'Electric' });
+                testQPOverride('Protosynthesis', { weather: 'Sun' });
             });
         });
     });
