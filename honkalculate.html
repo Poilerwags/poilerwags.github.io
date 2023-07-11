@@ -109,6 +109,11 @@
                             <select class="type1 terrain-trigger"></select>
                             <select class="type2 terrain-trigger"></select>
                         </div>
+                        <div class="gen-specific g9">
+                            <label>Tera Type</label>
+                            <select class="teraType terrain-trigger calc-trigger"></select>
+                            <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
+                        </div>
                         <div class="hide">
                             <label>Forme</label>
                             <select class="forme calc-trigger"></select>
@@ -647,8 +652,14 @@
                         <label class="btn btn-small btn-mid" for="rain">Rain</label>
                         <input class="visually-hidden" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">Sand</label>
-                        <input class="visually-hidden" type="radio" name="weather" value="Hail" id="hail" />
-                        <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        <span class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <input class="visually-hidden" type="radio" name="weather" value="Hail" id="hail" />
+                            <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        </span>
+                        <span class="gen-specific g9">
+                            <input class="visually-hidden" type="radio" name="weather" value="Snow" id="snow" />
+                            <label class="btn btn-small btn-right" for="snow">Snow</label>
+                        </span>
                     </div>
                     <div class="gen-specific g6 g7 g8 g9" title="Select the current weather condition.">
                         <input class="visually-hidden" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
@@ -668,12 +679,20 @@
                         <input class="visually-hidden" type="radio" name="gscWeather" value="Sand" id="gscSand" />
                         <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                     </div>
+                    <div class="gen-specific g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto; display: inline-block;">
+                        <span hidden id="magicRoomInstruction">Is Magic Room in effect?</span>
+                        <span hidden id="wonderRoomInstruction">Is Wonder Room in effect?</span>
+                        <input aria-describedby="magicRoomInstruction" class="visually-hidden" type="checkbox" id="magicroom" />
+                        <label class="btn btn-xxxwide btn-left" for="magicroom">Magic Room</label>
+                        <input aria-describedby="wonderRoomInstruction" class="visually-hidden" type="checkbox" id="wonderroom" />
+                        <label class="btn btn-xxxwide btn-right" for="wonderroom">Wonder Room</label>
+                    </div>
                     <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
                         <input class="visually-hidden" type="checkbox" id="gravity" />
                         <label class="btn" for="gravity">Gravity</label>
                     </div>
                     <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9" />
-                    <div class="btn-group gen-specific g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Is Stealth Rock affecting this side of the field?">
                             <input class="visually-hidden" type="checkbox" id="srL" />
                             <label class="btn btn-xwide" for="srL">Stealth Rock</label>
@@ -683,7 +702,7 @@
                             <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                         </div>
                     </div>
-						 <div class="btn-group gen-specific g8 g9">
+						 <div class="btn-group gen-specific g8">
                         <div class="left" title="Is Steelsurge affecting this side of the field?">
                             <input class="visually-hidden" type="checkbox" id="steelsurgeL" />
                             <label class="btn btn-xwide" for="steelsurgeL">Steelsurge</label>
@@ -893,16 +912,16 @@
     </script>
     <script type="text/javascript" src="./calc/util.js?8fa0c7ff"></script>
     <script type="text/javascript" src="./calc/stats.js?9220179f"></script>
-    <script type="text/javascript" src="./calc/data/species.js?c8c70039"></script>
-    <script type="text/javascript" src="./js/data/sets/gen9.js?63cc3ac7"></script>
-    <script type="text/javascript" src="./js/data/sets/gen8.js?fbc0b060"></script>
-    <script type="text/javascript" src="./js/data/sets/gen7.js?ea20af76"></script>
-    <script type="text/javascript" src="./js/data/sets/gen6.js?7f14abaf"></script>
-    <script type="text/javascript" src="./js/data/sets/gen5.js?e4227796"></script>
-    <script type="text/javascript" src="./js/data/sets/gen4.js?4fc34633"></script>
-    <script type="text/javascript" src="./js/data/sets/gen3.js?c07ca850"></script>
-    <script type="text/javascript" src="./js/data/sets/gen2.js?3ff43050"></script>
-    <script type="text/javascript" src="./js/data/sets/gen1.js?6667e6d8"></script>
+    <script type="text/javascript" src="./calc/data/species.js?5ac4c1a2"></script>
+    <script type="text/javascript" src="./js/data/sets/gen9.js?9bdf2c06"></script>
+    <script type="text/javascript" src="./js/data/sets/gen8.js?46ff0494"></script>
+    <script type="text/javascript" src="./js/data/sets/gen7.js?936d324b"></script>
+    <script type="text/javascript" src="./js/data/sets/gen6.js?bcf761fc"></script>
+    <script type="text/javascript" src="./js/data/sets/gen5.js?d9f9f7a8"></script>
+    <script type="text/javascript" src="./js/data/sets/gen4.js?1f5d6e48"></script>
+    <script type="text/javascript" src="./js/data/sets/gen3.js?da89af5e"></script>
+    <script type="text/javascript" src="./js/data/sets/gen2.js?2e67b47d"></script>
+    <script type="text/javascript" src="./js/data/sets/gen1.js?ae52b55d"></script>
     <script type="text/javascript" src="./calc/data/types.js?41e18646"></script>
     <script type="text/javascript" src="./calc/data/natures.js?04f00dc5"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?d01edce9"></script>
@@ -914,7 +933,7 @@
     <script type="text/javascript" src="./calc/field.js?2c7f95da"></script>
     <script type="text/javascript" src="./calc/items.js?14d1f9a3"></script>
     <script type="text/javascript" src="./calc/mechanics/util.js?efe5232c"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen789.js?5abaf770"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen789.js?ee6b3a04"></script>
     <script type="text/javascript" src="./calc/mechanics/gen56.js?326e578d"></script>
     <script type="text/javascript" src="./calc/mechanics/gen4.js?a7626c4b"></script>
     <script type="text/javascript" src="./calc/mechanics/gen3.js?070ab0fe"></script>
@@ -932,7 +951,7 @@
         <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" class="links-lighten" target="_blank">Bug Reports</a></li>
         <li><a href="https://github.com/smogon/damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
         <button type="button" id="dark-theme-toggle"></button>
-        <script type="text/javascript" src="./js/dark-theme-toggle.js?b0454081"></script>
+        <script type="text/javascript" src="./js/dark-theme-toggle.js?4adfa54a"></script>
     </div>
 
 </body>

@@ -11114,26 +11114,26 @@ var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
 delete SS['Pikachu-Starter'];
 delete SS['Eevee-Starter'];
 var PLA_PATCH = {
-    Arcanine: { otherFormes: ['Arcanine-Hisui'] },
-    Avalugg: { otherFormes: ['Avalugg-Hisui'] },
+    Arcanine: { otherFormes: ['Arcanine-Delta', 'Arcanine-Hisui'] },
+    Avalugg: { otherFormes: ['Avalugg-Delta', 'Avalugg-Hisui'] },
     Basculin: { otherFormes: ['Basculin-Blue-Striped', 'Basculin-White-Striped'] },
     Braviary: { otherFormes: ['Braviary-Hisui'] },
     Decidueye: { otherFormes: ['Decidueye-Hisui'] },
     Dialga: { otherFormes: ['Dialga-Origin'] },
     Electrode: { otherFormes: ['Electrode-Hisui'] },
-    Goodra: { otherFormes: ['Goodra-Hisui'] },
-    Growlithe: { otherFormes: ['Growlithe-Hisui'] },
-    Lilligant: { otherFormes: ['Lilligant-Hisui'] },
+    Goodra: { otherFormes: ['Goodra-Delta', 'Goodra-Hisui'] },
+    Growlithe: { otherFormes: ['Growlithe-Delta', 'Growlithe-Hisui'] },
+    Lilligant: { otherFormes: ['Lilligant-Delta-W', 'Lilligant-Delta-F', 'Lilligant-Hisui'] },
     Palkia: { otherFormes: ['Palkia-Origin'] },
     Qwilfish: { otherFormes: ['Qwilfish-Hisui'] },
     Samurott: { otherFormes: ['Samurott-Hisui'] },
-    Sliggoo: { otherFormes: ['Sliggoo-Hisui'] },
+    Sliggoo: { otherFormes: ['Sliggoo-Delta', 'Sliggoo-Hisui'] },
     Sneasel: { otherFormes: ['Sneasel-Hisui'] },
     Stantler: { nfe: true },
     Typhlosion: { otherFormes: ['Typhlosion-Hisui'] },
     Ursaring: { nfe: true },
     Voltorb: { otherFormes: ['Voltorb-Hisui'] },
-    Zoroark: { otherFormes: ['Zoroark-Hisui'] },
+    Zoroark: { otherFormes: ['Zoroark-Mega', 'Zoroark-Hisui'] },
     Zorua: { otherFormes: ['Zorua-Hisui'] },
     'Arcanine-Hisui': {
         types: ['Fire', 'Rock'],
@@ -11232,7 +11232,7 @@ var PLA_PATCH = {
     },
     Kleavor: {
         types: ['Bug', 'Rock'],
-        bs: { hp: 70, at: 130, df: 95, sa: 45, sd: 75, sp: 85 },
+        bs: { hp: 70, at: 135, df: 95, sa: 45, sd: 70, sp: 85 },
         weightkg: 89,
         abilities: { 0: 'Swarm' }
     },
@@ -11345,7 +11345,7 @@ var SV_PATCH = {
     Girafarig: { nfe: true },
     Primeape: { nfe: true },
     Tauros: { otherFormes: ['Tauros-Paldea-Aqua', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Combat'] },
-    Wooper: { otherFormes: ['Wooper-Paldea'] },
+    Wooper: { otherFormes: ['Wooper-Delta', 'Wooper-Paldea'] },
     Zacian: { bs: { at: 120 } },
     'Zacian-Crowned': { bs: { at: 150 } },
     Zamazenta: { bs: { at: 120 } },
@@ -11642,6 +11642,12 @@ var SV_PATCH = {
         weightkg: 35,
         abilities: { 0: 'Pickup' },
         nfe: true
+    },
+    Hemogoblin: {
+        types: ['Fairy', 'Fire'],
+        bs: { hp: 90, at: 99, df: 89, sa: 99, sd: 97, sp: 55 },
+        weightkg: 85,
+        abilities: { 0: 'Pixilate' }
     },
     Houndstone: {
         types: ['Ghost'],
